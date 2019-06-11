@@ -1,0 +1,21 @@
+{
+  "generator-trigen-lib": {
+    "editPackage": true,
+    "pkg": {
+      "name": "i18n-for-react",
+      "version": "1.0.0",
+      "description": "Modern translation module for React.",
+      "repository": "https://github.com/TrigenSoftware/i18n-for-react",
+      "author": "dangreen"
+    },
+    "type": "universal",
+    "lang": "ts",
+    "rollup": true,
+    "jest": true,
+    "coverage": true,
+    "publishAsRoot": false,
+    "cleanPublish": true,
+    "checkSize": true,
+    "gitInit": true
+  }
+}
