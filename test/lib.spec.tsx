@@ -97,6 +97,19 @@ describe('i18n-for-react', () => {
 		expect(wrapper.html()).toBe('Hello');
 	});
 
+	it('should wrap parts with format', () => {
+
+		const wrapper = mount(
+			<I18nProvider
+				{...CONFIG}
+			>
+				{__('Hi, <>%s</>!', 'username', [<b key='b'/>])}
+			</I18nProvider>
+		);
+
+		expect(wrapper.html()).toBe('Hi, <b>username</b>!');
+	});
+
 	it('should change locale', () => {
 
 		const subconfig = {

@@ -23,4 +23,134 @@
 
 Modern translation module for React.
 
-> This project generated with [generator-trigen-lib](https://www.npmjs.com/package/generator-trigen-lib)
+## Install
+
+```sh
+npm i i18n-for-react
+# or
+yarn add i18n-for-react
+```
+
+## API
+
+Module exposes next API:
+
+```js
+export default globalConfig;
+export {
+    IConfig,
+    ILocales,
+    IFallbacks,
+    IUnknownPhraseListener,
+    IProcessor,
+    IParams,
+    IPluralParams,
+    pluralIntervalProcessor,
+    mustacheProcessor,
+    I18nContext,
+    I18nProvider,
+    withI18n,
+    rprintf,
+    __,
+    __mf,
+    __n,
+    __m
+};
+```
+
+[Description of this methods you can find in Documentation.](https://trigensoftware.github.io/i18n-for-react/index.html)
+
+Basic API is same as in [`i18n-for-browser` module.](https://github.com/TrigenSoftware/i18n-for-browser)
+
+### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#i18nprovider)
+
+Configurator and provider of `i18n` instance.
+
+Root context configuration example:
+
+```tsx
+<I18nProvider
+    locale='en'
+    locales={{
+        en: {/* ... */},
+        ru: {/* ... */}
+    }}
+>
+    {__`hi`}
+</I18nProvider>
+```
+
+Fork context example:
+
+```tsx
+<I18nProvider
+    locale='en'
+    locales={{
+        en: {/* ... */},
+        ru: {/* ... */}
+    }}
+>
+    {__`hi`}
+    <I18nProvider
+        locales={{
+            en: {/* ... */},
+            ru: {/* ... */}
+        }}
+    >
+        {__`goodby`}
+    </I18nProvider>
+</I18nProvider>
+```
+
+### [withI18n](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#withi18n)
+
+Decorator to configure provider of `i18n` instance.
+
+Example:
+
+```tsx
+@withI18n({
+    en: {/* ... */},
+    ru: {/* ... */}
+})
+class Container extends Component {
+
+    state = {
+        locale: 'en'
+    };
+
+    render() {
+        return (
+            <I18nProvider
+                locale={this.state.locale}
+            >
+                {__`hi`}
+                <I18nProvider
+                    locales={{
+                        en: {/* ... */},
+                        ru: {/* ... */}
+                    }}
+                >
+                    {__`goodby`}
+                </I18nProvider>
+            </I18nProvider>
+        );
+    }
+}
+```
+
+### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#rprintf)
+
+Every translate function support React-formatted output:
+
+```tsx
+__('Hi, <>%s</>!', 'username', [<b/>])
+// or
+__('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
+// will produce:
+[
+    'Hi, ',
+    <b>username</b>,
+    '!'
+]
+```

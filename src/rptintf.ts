@@ -67,21 +67,27 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 		part += text[i];
 	}
 
+	result = add(result, part);
+
 	return result;
 }
 
-function add(Parts: Parts, add: Parts): Parts {
+function add(parts: Parts, add: Parts): Parts {
 
-	if (!Parts) {
+	if (!parts) {
 		return add;
 	}
 
-	if (typeof Parts === 'string' && typeof add === 'string') {
-		return Parts + add;
+	if (!add) {
+		return parts;
+	}
+
+	if (typeof parts === 'string' && typeof add === 'string') {
+		return parts + add;
 	}
 
 	return [].concat(
-		Parts,
+		parts,
 		add
 	);
 }

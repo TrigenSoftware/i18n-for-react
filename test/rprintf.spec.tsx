@@ -37,6 +37,19 @@ describe('rptintf', () => {
 				}
 			}
 		]);
+
+		expect(
+			rptintf('Start <>bold</>!', [<b/>])
+		).toMatchObject([
+			'Start ',
+			{
+				type:  'b',
+				props: {
+					children: 'bold'
+				}
+			},
+			'!'
+		]);
 	});
 
 	it('should wrap some text', () => {
