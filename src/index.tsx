@@ -3,7 +3,9 @@ import React, {
 } from 'react';
 import Translate from './Translate';
 import I18nContext from './Context';
-import I18nProvider from './Provider';
+import I18nProvider, {
+	II18nProviderConfig
+} from './Provider';
 import withI18n from './withI18n';
 import rprintf from './rptintf';
 import i18n, {
@@ -19,6 +21,7 @@ export * from 'i18n-for-browser';
 export {
 	I18nContext,
 	I18nProvider,
+	II18nProviderConfig,
 	withI18n,
 	rprintf
 };

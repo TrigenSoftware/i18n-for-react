@@ -49,6 +49,7 @@ export {
     mustacheProcessor,
     I18nContext,
     I18nProvider,
+    II18nProviderConfig,
     withI18n,
     rprintf,
     __,
