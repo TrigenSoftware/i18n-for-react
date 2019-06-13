@@ -88,6 +88,7 @@ yarn add i18n-for-react</code></pre>
     mustacheProcessor,
     I18nContext,
     I18nProvider,
+    II18nProviderConfig,
     withI18n,
     rprintf,
     __,
@@ -100,18 +101,18 @@ yarn add i18n-for-react</code></pre>
 				<h3 id="i18nprovider"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#i18nprovider">I18nProvider</a></h3>
 				<p>Configurator and provider of <code>i18n</code> instance.</p>
 				<p>Root context configuration example:</p>
-				<pre><code class="language-tsx">&lt;I18nProvider
-    locale=&#39;en&#39;
+				<pre><code class="language-jsx">&lt;I18nProvider
+    locale=<span class="hljs-string">'en'</span>
     locales={{
-        en: {/* ... */},
-        ru: {/* ... */}
+        <span class="hljs-attr">en</span>: {<span class="hljs-comment">/* ... */</span>},
+        <span class="hljs-attr">ru</span>: {<span class="hljs-comment">/* ... */</span>}
     }}
 &gt;
-    {__`hi`}
-&lt;/I18nProvider&gt;</code></pre>
+    {__<span class="hljs-string">`hi`</span>}
+&lt;<span class="hljs-regexp">/I18nProvider&gt;</span></code></pre>
 				<p>Fork context example:</p>
-				<pre><code class="language-tsx">&lt;I18nProvider
-    locale=&#39;en&#39;
+				<pre><code class="language-jsx">&lt;I18nProvider
+    locale='en'
     locales={{
         en: {/* ... */},
         ru: {/* ... */}
@@ -130,44 +131,44 @@ yarn add i18n-for-react</code></pre>
 				<h3 id="withi18n"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#withi18n">withI18n</a></h3>
 				<p>Decorator to configure provider of <code>i18n</code> instance.</p>
 				<p>Example:</p>
-				<pre><code class="language-tsx">@withI18n({
-    en: {/* ... */},
-    ru: {/* ... */}
+				<pre><code class="language-jsx">@withI18n({
+    <span class="hljs-attr">en</span>: {<span class="hljs-comment">/* ... */</span>},
+    <span class="hljs-attr">ru</span>: {<span class="hljs-comment">/* ... */</span>}
 })
-class Container extends Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
 
     state = {
-        locale: &#39;en&#39;
+        <span class="hljs-attr">locale</span>: <span class="hljs-string">'en'</span>
     };
 
     render() {
-        return (
-            &lt;I18nProvider
-                locale={this.state.locale}
-            &gt;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">I18nProvider</span>
+                <span class="hljs-attr">locale</span>=<span class="hljs-string">{this.state.locale}</span>
+            &gt;</span>
                 {__`hi`}
-                &lt;I18nProvider
-                    locales={{
-                        en: {/* ... */},
-                        ru: {/* ... */}
+                <span class="hljs-tag">&lt;<span class="hljs-name">I18nProvider</span>
+                    <span class="hljs-attr">locales</span>=<span class="hljs-string">{{</span>
+                        <span class="hljs-attr">en:</span> {/* <span class="hljs-attr">...</span> */},
+                        <span class="hljs-attr">ru:</span> {/* <span class="hljs-attr">...</span> */}
                     }}
-                &gt;
+                &gt;</span>
                     {__`goodby`}
-                &lt;/I18nProvider&gt;
-            &lt;/I18nProvider&gt;
+                <span class="hljs-tag">&lt;/<span class="hljs-name">I18nProvider</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">I18nProvider</span>&gt;</span></span>
         );
     }
 }</code></pre>
 				<h3 id="rprintf-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#rprintf">rprintf()</a></h3>
 				<p>Every translate function support React-formatted output:</p>
-				<pre><code class="language-tsx">__(&#39;Hi, &lt;&gt;%s&lt;/&gt;!&#39;, &#39;username&#39;, [&lt;b/&gt;])
+				<pre><code class="language-jsx">__('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [&lt;b/&gt;])
 // or
-__(&#39;Hi, &lt;&gt;%s&lt;/&gt;!&#39;, &#39;username&#39;, [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
+__('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
 // will produce:
 [
-    &#39;Hi, &#39;,
+    'Hi, ',
     &lt;b&gt;username&lt;/b&gt;,
-    &#39;!&#39;
+    '!'
 ]</code></pre>
 			</div>
 		</div>

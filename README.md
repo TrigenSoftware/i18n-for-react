@@ -69,7 +69,7 @@ Configurator and provider of `i18n` instance.
 
 Root context configuration example:
 
-```tsx
+```jsx
 <I18nProvider
     locale='en'
     locales={{
@@ -83,7 +83,7 @@ Root context configuration example:
 
 Fork context example:
 
-```tsx
+```jsx
 <I18nProvider
     locale='en'
     locales={{
@@ -109,7 +109,7 @@ Decorator to configure provider of `i18n` instance.
 
 Example:
 
-```tsx
+```jsx
 @withI18n({
     en: {/* ... */},
     ru: {/* ... */}
@@ -144,7 +144,7 @@ class Container extends Component {
 
 Every translate function support React-formatted output:
 
-```tsx
+```jsx
 __('Hi, <>%s</>!', 'username', [<b/>])
 // or
 __('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
