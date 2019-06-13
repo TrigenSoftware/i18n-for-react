@@ -34,7 +34,9 @@
     "react": "^16.8.6"
   },
   "dependencies": {
-    "@types/react": "^16.8.19"
+    "@types/prop-types": "^15.7.1",
+    "@types/react": "^16.8.19",
+    "hoist-non-react-statics": "^3.3.0"
   },
   "devDependencies": {
     "@trigen/scripts": "2",
@@ -45,8 +47,14 @@
     "@trigen/scripts-plugin-size-limit": "2",
     "@trigen/scripts-plugin-typescript": "2",
     "@trigen/scripts-preset-lib": "2",
+    "@types/enzyme": "^3.9.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "i18n-for-browser": "^1.1.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "rollup-plugin-tslint": "^0.2.2",
     "rollup-plugin-typescript2": "^0.21.0"
   },

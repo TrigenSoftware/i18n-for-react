@@ -9,7 +9,7 @@ type Parts = Part|Part[];
 type WrapperFn = (children: Parts) => Parts;
 type Wrapper = ReactElement|WrapperFn;
 
-const tagRegExp = /<>/;
+export const tagRegExp = /<>/;
 
 export default function rptintf(text: string, wrappers: Wrapper[] = [], startwrapperIndexPointerPointer = { v: 0 }) {
 

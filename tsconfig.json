@@ -21,7 +21,7 @@
 		]
 	},
 	"include": [
-		"src/index.ts"
+		"src/index.tsx"
 	],
 	"exclude": [
 		"lib/**/*"
