@@ -6,7 +6,7 @@ import rprintf, {
 	tagRegExp
 } from './rptintf';
 
-export interface IProps {
+interface IProps {
 	args: any[];
 	fn(...args): any;
 }
