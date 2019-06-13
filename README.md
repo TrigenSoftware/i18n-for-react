@@ -63,7 +63,7 @@ export {
 
 Basic API is same as in [`i18n-for-browser` module.](https://github.com/TrigenSoftware/i18n-for-browser)
 
-### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#i18nprovider)
+### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
 
 Configurator and provider of `i18n` instance.
 
@@ -103,7 +103,7 @@ Fork context example:
 </I18nProvider>
 ```
 
-### [withI18n](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#withi18n)
+### [withI18n](https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n)
 
 Decorator to configure provider of `i18n` instance.
 
@@ -140,7 +140,7 @@ class Container extends Component {
 }
 ```
 
-### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#rprintf)
+### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
 
 Every translate function support React-formatted output:
 
