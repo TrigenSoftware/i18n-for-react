@@ -52,6 +52,19 @@ describe('rptintf', () => {
 		]);
 	});
 
+	it('should handle nl', () => {
+
+		expect(
+			rptintf('one\ntwo')
+		).toMatchObject([
+			'one',
+			{
+				type: 'br'
+			},
+			'two'
+		]);
+	});
+
 	it('should wrap some text', () => {
 
 		expect(

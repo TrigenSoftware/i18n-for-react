@@ -1,5 +1,5 @@
 // tslint:disable no-magic-numbers
-import {
+import React, {
 	ReactElement,
 	cloneElement
 } from 'react';
@@ -25,6 +25,13 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 	for (let i = 0; i < len; i++) {
 
 		char = text[i];
+
+		if (char === '\n') {
+			result = add(result, part);
+			result = add(result, <br/>);
+			part = '';
+			continue;
+		}
 
 		if (char === '<' && text[i + 1] === '>') {
 
