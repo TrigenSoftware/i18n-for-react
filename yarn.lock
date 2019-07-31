@@ -4888,9 +4888,9 @@ husky@^2.3.0:
     slash "^3.0.0"
 
 i18n-for-browser@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-1.1.0.tgz#40ada2214deb8cccc10e8e50b5ac7c8b2498e694"
-  integrity sha512-0JOlAKLVf75gcT9hCsX/sNMK+agNTDMnS6We5ty0o/somqHeuM4g1Xpb6nd7YAO2HrvNXv78HCGgjd0ByYujAA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-1.1.1.tgz#efbb27a5432542e6a060e7a3ae580b8137e4c2be"
+  integrity sha512-ch0jDzktPmGAfJDJOX9oFYcqA+4Ia7TKqBpQoJMgc24OgqW4caA0PEtZGbGcuuDsOKSPjdAud9BvAmGxDWk0fQ==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@types/js-cookie" "^2.2.2"
