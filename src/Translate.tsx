@@ -1,4 +1,5 @@
 import {
+	ContextType,
 	Component
 } from 'react';
 import I18nContext from './Context';
@@ -15,6 +16,7 @@ export default class I18nTranslate extends Component<IProps> {
 
 	static contextType = I18nContext;
 
+	context!: ContextType<typeof I18nContext>;
 	private contextVersion: symbol = null;
 
 	constructor(props, context) {
