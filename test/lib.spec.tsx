@@ -5,11 +5,11 @@ import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, {
 	mount
 } from 'enzyme';
-import i18n, {
+import {
 	IConfig,
 	I18nProvider,
 	withI18n,
-	__
+	__x
 } from '../src';
 
 Enzyme.configure({
@@ -37,7 +37,7 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__`hi`}
+				{__x`hi`}
 			</I18nProvider>
 		);
 
@@ -50,13 +50,13 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__`hi`}
+				{__x`hi`}
 				{' '}
 				<I18nProvider
 					{...CONFIG}
 					defaultLocale='ru'
 				>
-					{__`hi`}
+					{__x`hi`}
 				</I18nProvider>
 			</I18nProvider>
 		);
@@ -70,7 +70,7 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__('<>hi</>', [<b key='b'/>])}
+				{__x('<>hi</>', [<b key='b'/>])}
 			</I18nProvider>
 		);
 
@@ -80,7 +80,7 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__('bold', [<b key='b'/>])}
+				{__x('bold', [<b key='b'/>])}
 			</I18nProvider>
 		);
 
@@ -90,7 +90,7 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__`bold`}
+				{__x`bold`}
 			</I18nProvider>
 		);
 
@@ -103,7 +103,7 @@ describe('i18n-for-react', () => {
 			<I18nProvider
 				{...CONFIG}
 			>
-				{__('Hi, <>%s</>!', 'username', [<b key='b'/>])}
+				{__x('Hi, <>%s</>!', 'username', [<b key='b'/>])}
 			</I18nProvider>
 		);
 
@@ -135,12 +135,12 @@ describe('i18n-for-react', () => {
 						locale={this.state.locale}
 						{...CONFIG}
 					>
-						{__`hi`}
+						{__x`hi`}
 						{' '}
 						<I18nProvider
 							{...subconfig}
 						>
-							{__`hi`}
+							{__x`hi`}
 						</I18nProvider>
 					</I18nProvider>
 				);
@@ -185,12 +185,12 @@ describe('i18n-for-react', () => {
 					<I18nProvider
 						locale={this.state.locale}
 					>
-						{__`hi`}
+						{__x`hi`}
 						{' '}
 						<I18nProvider
 							{...subconfig}
 						>
-							{__`hi`}
+							{__x`hi`}
 						</I18nProvider>
 					</I18nProvider>
 				);

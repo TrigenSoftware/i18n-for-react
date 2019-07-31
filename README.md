@@ -4,7 +4,8 @@
 [![Dependencies status][deps]][deps-url]
 [![Build status][build]][build-url]
 [![Coverage status][coverage]][coverage-url]
-[![Greenkeeper badge][greenkeeper]][greenkeeper-url]
+[![Dependabot badge][dependabot]][dependabot-url]
+[![Documentation badge][documentation]][documentation-url]
 
 [npm]: https://img.shields.io/npm/v/i18n-for-react.svg
 [npm-url]: https://npmjs.com/package/i18n-for-react
@@ -12,14 +13,17 @@
 [deps]: https://david-dm.org/TrigenSoftware/i18n-for-react.svg
 [deps-url]: https://david-dm.org/TrigenSoftware/i18n-for-react
 
-[build]: http://img.shields.io/travis/com/TrigenSoftware/i18n-for-react.svg
+[build]: http://img.shields.io/travis/com/TrigenSoftware/i18n-for-react/master.svg
 [build-url]: https://travis-ci.com/TrigenSoftware/i18n-for-react
 
 [coverage]: https://img.shields.io/coveralls/TrigenSoftware/i18n-for-react.svg
 [coverage-url]: https://coveralls.io/r/TrigenSoftware/i18n-for-react
 
-[greenkeeper]: https://badges.greenkeeper.io/TrigenSoftware/i18n-for-react.svg
-[greenkeeper-url]: https://greenkeeper.io/
+[dependabot]: https://api.dependabot.com/badges/status?host=github&repo=TrigenSoftware/i18n-for-react
+[dependabot-url]: https://dependabot.com/
+
+[documentation]: https://img.shields.io/badge/API-Documentation-2b7489.svg
+[documentation-url]: https://trigensoftware.github.io/i18n-for-react
 
 Modern translation module for React.
 
@@ -55,7 +59,10 @@ export {
     __,
     __mf,
     __n,
-    __m
+    __m,
+    __x,
+    __xmf,
+    __xn
 };
 ```
 
@@ -77,7 +84,7 @@ Root context configuration example:
         ru: {/* ... */}
     }}
 >
-    {__`hi`}
+    {__x`hi`}
 </I18nProvider>
 ```
 
@@ -91,14 +98,14 @@ Fork context example:
         ru: {/* ... */}
     }}
 >
-    {__`hi`}
+    {__x`hi`}
     <I18nProvider
         locales={{
             en: {/* ... */},
             ru: {/* ... */}
         }}
     >
-        {__`goodby`}
+        {__x`goodby`}
     </I18nProvider>
 </I18nProvider>
 ```
@@ -125,14 +132,14 @@ class Container extends Component {
             <I18nProvider
                 locale={this.state.locale}
             >
-                {__`hi`}
+                {__x`hi`}
                 <I18nProvider
                     locales={{
                         en: {/* ... */},
                         ru: {/* ... */}
                     }}
                 >
-                    {__`goodby`}
+                    {__x`goodby`}
                 </I18nProvider>
             </I18nProvider>
         );
@@ -145,9 +152,9 @@ class Container extends Component {
 Every translate function support React-formatted output:
 
 ```jsx
-__('Hi, <>%s</>!', 'username', [<b/>])
+__x('Hi, <>%s</>!', 'username', [<b/>])
 // or
-__('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
+__x('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
 // will produce:
 [
     'Hi, ',
@@ -155,3 +162,15 @@ __('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
     '!'
 ]
 ```
+
+### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+
+Same as `__()`, but for JSX.
+
+### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+
+Same as `__mf()`, but for JSX.
+
+### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+
+Same as `__n()`, but for JSX.

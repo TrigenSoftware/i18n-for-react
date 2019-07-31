@@ -1,7 +1,5 @@
 // tslint:disable jsx-key
-import React, {
-	ReactElement
-} from 'react';
+import React from 'react';
 import rptintf from '../src/rptintf';
 
 describe('rptintf', () => {

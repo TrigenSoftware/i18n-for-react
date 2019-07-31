@@ -11,9 +11,9 @@ import rprintf from './rptintf';
 import i18n, {
 	IPluralParams,
 	IParams,
-	__ as translate,
-	__mf as translatemf,
-	__n as translaten
+	__,
+	__mf,
+	__n
 } from 'i18n-for-browser';
 
 export default i18n;
@@ -27,17 +27,23 @@ export {
 };
 
 /**
+ * Idea of naming:
+ * `jsx` is JavaScript XML;
+ * `__` function for `jsx` is `__x`.
+ */
+
+/**
  * Translates a single phrase and adds it to locales if unknown.
  * @param  phraseOrParams - Phrase to translate or params.
  * @param  values - Values to print.
  * @return Returns translated parsed and substituted string.
  */
-export function __(phraseOrParams: string|TemplateStringsArray|IParams, ...values): ReactElement;
+export function __x(phraseOrParams: string|TemplateStringsArray|IParams, ...values): ReactElement;
 
-export function __(...args) {
+export function __x(...args) {
 	return (
 		<Translate
-			fn={translate}
+			fn={__}
 			args={args}
 		/>
 	);
@@ -53,12 +59,12 @@ export function __(...args) {
  * @param  values - Values to print.
  * @return Translate.
  */
-export function __mf(phraseOrParams: string|TemplateStringsArray|IParams, ...values): ReactElement;
+export function __xmf(phraseOrParams: string|TemplateStringsArray|IParams, ...values): ReactElement;
 
-export function __mf(...args) {
+export function __xmf(...args) {
 	return (
 		<Translate
-			fn={translatemf}
+			fn={__mf}
 			args={args}
 		/>
 	);
@@ -73,7 +79,7 @@ export function __mf(...args) {
  * @param  values - Values to print.
  * @return Translate.
  */
-export function __n(
+export function __xn(
 	params: IPluralParams,
 	count?: string|number,
 	...values
@@ -88,7 +94,7 @@ export function __n(
  * @param  values - Values to print.
  * @return Translate.
  */
-export function __n(
+export function __xn(
 	singularOrStrings: string|TemplateStringsArray,
 	count: string|number,
 	...values
@@ -104,17 +110,17 @@ export function __n(
  * @param  values - Values to print.
  * @return Translate.
  */
-export function __n(
+export function __xn(
 	singular: string,
 	plural: string,
 	count: string|number,
 	...values
 ): ReactElement;
 
-export function __n(...args) {
+export function __xn(...args) {
 	return (
 		<Translate
-			fn={translaten}
+			fn={__n}
 			args={args}
 		/>
 	);
