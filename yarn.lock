@@ -1088,15 +1088,15 @@
     any-observable "^0.3.0"
 
 "@trigen/scripts-plugin-babel@2":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-babel/-/scripts-plugin-babel-2.5.0.tgz#efbf9118a696a4e67a47459880285e6be4ff26ed"
-  integrity sha512-FcBB6ixHhjTwBdeUOX1pjmaVUnoemsZ/4D0+Mf2dJpxsfVjsrSKowVxwWugtF68Ypd5ADisHTp/qwj+KQX35hw==
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-babel/-/scripts-plugin-babel-2.6.3.tgz#28a1128e9bd374a486a5cdb634de70a24ec91277"
+  integrity sha512-RE9KFw+rNOa0yTAlIyWn/R+EX+bHIyR5wbjGgFhcqKX8tiWpeT9ROLD+3MtkYjgmkWRbbPBrznRIMHEWe6r17g==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.4.0"
     "@babel/node" "^7.0.0"
     "@babel/runtime" "^7.4.2"
-    "@trigen/scripts" "^2.5.0"
+    "@trigen/scripts" "^2.6.3"
     babel-preset-trigen "^2.2.1"
 
 "@trigen/scripts-plugin-eslint@2":
