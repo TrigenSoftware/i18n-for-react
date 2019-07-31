@@ -65,9 +65,10 @@
 				<h1 id="i18n-for-react">i18n-for-react</h1>
 				<p><a href="https://npmjs.com/package/i18n-for-react"><img src="https://img.shields.io/npm/v/i18n-for-react.svg" alt="NPM version"></a>
 					<a href="https://david-dm.org/TrigenSoftware/i18n-for-react"><img src="https://david-dm.org/TrigenSoftware/i18n-for-react.svg" alt="Dependencies status"></a>
-					<a href="https://travis-ci.com/TrigenSoftware/i18n-for-react"><img src="http://img.shields.io/travis/com/TrigenSoftware/i18n-for-react.svg" alt="Build status"></a>
+					<a href="https://travis-ci.com/TrigenSoftware/i18n-for-react"><img src="http://img.shields.io/travis/com/TrigenSoftware/i18n-for-react/master.svg" alt="Build status"></a>
 					<a href="https://coveralls.io/r/TrigenSoftware/i18n-for-react"><img src="https://img.shields.io/coveralls/TrigenSoftware/i18n-for-react.svg" alt="Coverage status"></a>
-				<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/TrigenSoftware/i18n-for-react.svg" alt="Greenkeeper badge"></a></p>
+					<a href="https://dependabot.com/"><img src="https://api.dependabot.com/badges/status?host=github&repo=TrigenSoftware/i18n-for-react" alt="Dependabot badge"></a>
+				<a href="https://trigensoftware.github.io/i18n-for-react"><img src="https://img.shields.io/badge/API-Documentation-2b7489.svg" alt="Documentation badge"></a></p>
 				<p>Modern translation module for React.</p>
 				<h2 id="install">Install</h2>
 				<pre><code class="language-sh">npm i i18n-for-react
@@ -94,7 +95,10 @@ yarn add i18n-for-react</code></pre>
     __,
     __mf,
     __n,
-    __m
+    __m,
+    __x,
+    __xmf,
+    __xn
 };</code></pre>
 				<p><a href="https://trigensoftware.github.io/i18n-for-react/index.html">Description of this methods you can find in Documentation.</a></p>
 				<p>Basic API is same as in <a href="https://github.com/TrigenSoftware/i18n-for-browser"><code>i18n-for-browser</code> module.</a></p>
@@ -108,7 +112,7 @@ yarn add i18n-for-react</code></pre>
         <span class="hljs-attr">ru</span>: {<span class="hljs-comment">/* ... */</span>}
     }}
 &gt;
-    {__<span class="hljs-string">`hi`</span>}
+    {__x<span class="hljs-string">`hi`</span>}
 &lt;<span class="hljs-regexp">/I18nProvider&gt;</span></code></pre>
 				<p>Fork context example:</p>
 				<pre><code class="language-jsx">&lt;I18nProvider
@@ -118,14 +122,14 @@ yarn add i18n-for-react</code></pre>
         ru: {/* ... */}
     }}
 &gt;
-    {__`hi`}
+    {__x`hi`}
     &lt;I18nProvider
         locales={{
             en: {/* ... */},
             ru: {/* ... */}
         }}
     &gt;
-        {__`goodby`}
+        {__x`goodby`}
     &lt;/I18nProvider&gt;
 &lt;/I18nProvider&gt;</code></pre>
 				<h3 id="withi18n"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n">withI18n</a></h3>
@@ -146,14 +150,14 @@ yarn add i18n-for-react</code></pre>
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">I18nProvider</span>
                 <span class="hljs-attr">locale</span>=<span class="hljs-string">{this.state.locale}</span>
             &gt;</span>
-                {__`hi`}
+                {__x`hi`}
                 <span class="hljs-tag">&lt;<span class="hljs-name">I18nProvider</span>
                     <span class="hljs-attr">locales</span>=<span class="hljs-string">{{</span>
                         <span class="hljs-attr">en:</span> {/* <span class="hljs-attr">...</span> */},
                         <span class="hljs-attr">ru:</span> {/* <span class="hljs-attr">...</span> */}
                     }}
                 &gt;</span>
-                    {__`goodby`}
+                    {__x`goodby`}
                 <span class="hljs-tag">&lt;/<span class="hljs-name">I18nProvider</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">I18nProvider</span>&gt;</span></span>
         );
@@ -161,15 +165,21 @@ yarn add i18n-for-react</code></pre>
 }</code></pre>
 				<h3 id="rprintf-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">rprintf()</a></h3>
 				<p>Every translate function support React-formatted output:</p>
-				<pre><code class="language-jsx">__('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [&lt;b/&gt;])
+				<pre><code class="language-jsx">__x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [&lt;b/&gt;])
 // or
-__('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
+__x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
 // will produce:
 [
     'Hi, ',
     &lt;b&gt;username&lt;/b&gt;,
     '!'
 ]</code></pre>
+				<h3 id="__x-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">__x()</a></h3>
+				<p>Same as <code>__()</code>, but for JSX.</p>
+				<h3 id="__xmf-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">__xmf()</a></h3>
+				<p>Same as <code>__mf()</code>, but for JSX.</p>
+				<h3 id="__xn-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">__xn()</a></h3>
+				<p>Same as <code>__n()</code>, but for JSX.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
