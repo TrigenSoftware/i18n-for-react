@@ -163,14 +163,14 @@ __x('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
 ]
 ```
 
-### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__x)
 
 Same as `__()`, but for JSX.
 
-### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xmf)
 
 Same as `__mf()`, but for JSX.
 
-### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xn)
 
 Same as `__n()`, but for JSX.
