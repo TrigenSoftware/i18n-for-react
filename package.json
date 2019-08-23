@@ -55,7 +55,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "rollup-plugin-tslint": "^0.2.2",
-    "rollup-plugin-typescript2": "^0.22.0"
+    "rollup-plugin-typescript2": "^0.23.0"
   },
   "files": [
     "lib"
