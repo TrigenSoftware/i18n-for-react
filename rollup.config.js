@@ -10,26 +10,28 @@ import {
 } from '@babel/core';
 import pkg from './package.json';
 
-const plugins = [
-	tslint({
-		exclude:    ['**/*.json', 'node_modules/**'],
-		throwError: true
-	}),
-	commonjs(),
-	typescript(),
-	babel({
-		extensions: [
-			...DEFAULT_EXTENSIONS,
-			'ts',
-			'tsx'
-		],
-		runtimeHelpers: true
-	})
-];
+function getPlugins(transpile = true) {
+	return [
+		tslint({
+			exclude:    ['**/*.json', 'node_modules/**'],
+			throwError: true
+		}),
+		commonjs(),
+		typescript(),
+		transpile && babel({
+			extensions: [
+				...DEFAULT_EXTENSIONS,
+				'ts',
+				'tsx'
+			],
+			runtimeHelpers: true
+		})
+	];
+}
 
-export default {
+export default [{
 	input:    'src/index.tsx',
-	plugins,
+	plugins:  getPlugins(),
 	external: external(pkg, true),
 	output:   [{
 		file:      pkg.main,
@@ -41,4 +43,13 @@ export default {
 		format:    'es',
 		sourcemap: 'inline'
 	}]
-};
+}, {
+	input:    'src/index.tsx',
+	plugins:  getPlugins(false),
+	external: external(pkg, true),
+	output:   {
+		file:      pkg.raw,
+		format:    'es',
+		sourcemap: 'inline'
+	}
+}];

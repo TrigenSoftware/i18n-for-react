@@ -1,6 +1,6 @@
 {
   "name": "i18n-for-react",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Modern translation module for React.",
   "author": "dangreen",
   "license": "MIT",
@@ -13,6 +13,7 @@
   },
   "main": "lib/index.js",
   "module": "lib/index.es.js",
+  "raw": "lib/index.babel.js",
   "types": "lib/index.d.ts",
   "engines": {
     "node": ">=10.0.0"
@@ -34,28 +35,28 @@
     "react": "^16.8.6"
   },
   "dependencies": {
-    "@types/react": "^16.8.19",
-    "hoist-non-react-statics": "^3.3.0"
+    "@types/react": "^16.9.23",
+    "hoist-non-react-statics": "^3.3.2"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^3.0.1",
-    "@trigen/scripts": "5.1.0",
-    "@trigen/scripts-plugin-babel": "5.1.0",
-    "@trigen/scripts-plugin-eslint": "5.1.0",
-    "@trigen/scripts-plugin-jest": "5.1.0",
-    "@trigen/scripts-plugin-rollup": "5.1.0",
-    "@trigen/scripts-plugin-size-limit": "5.1.0",
-    "@trigen/scripts-plugin-typescript": "5.1.0",
-    "@trigen/scripts-preset-lib": "5.1.0",
-    "@types/enzyme": "^3.9.3",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "i18n-for-browser": "^1.1.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "@size-limit/preset-small-lib": "^4.4.0",
+    "@trigen/scripts": "^5.1.0",
+    "@trigen/scripts-plugin-babel": "^5.1.0",
+    "@trigen/scripts-plugin-eslint": "^5.1.0",
+    "@trigen/scripts-plugin-jest": "^5.1.0",
+    "@trigen/scripts-plugin-rollup": "^5.1.0",
+    "@trigen/scripts-plugin-size-limit": "^5.1.0",
+    "@trigen/scripts-plugin-typescript": "^5.1.0",
+    "@trigen/scripts-preset-lib": "^5.1.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "i18n-for-browser": "^2.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "rollup-plugin-tslint": "^0.2.2",
-    "rollup-plugin-typescript2": "^0.24.0"
+    "rollup-plugin-typescript2": "^0.26.0"
   },
   "files": [
     "lib"

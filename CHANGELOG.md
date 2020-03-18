@@ -24,6 +24,13 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [3.0.0] - 2020-03-18
+### Added
+- Babel module.
+
+### Removed
+- Drop Node 8 support.
+
 ## [2.0.0] - 2019-07-31
 ### Changed
 - `__()` -> `__x()`

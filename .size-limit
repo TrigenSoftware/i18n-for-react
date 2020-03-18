@@ -1,12 +1,17 @@
 [
 	{
 		"path": "lib/index.js",
-		"limit": "60 KB",
+		"limit": "70 KB",
 		"webpack": false
 	},
 	{
 		"path": "lib/index.es.js",
-		"limit": "60 KB",
+		"limit": "70 KB",
+		"webpack": false
+	},
+	{
+		"path": "lib/index.babel.js",
+		"limit": "3 KB",
 		"webpack": false
 	}
 ]
