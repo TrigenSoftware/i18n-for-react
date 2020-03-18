@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> i18n-for-react</h1>
+			<h1>i18n-for-react</h1>
 		</div>
 	</div>
 </header>
@@ -62,7 +62,9 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="i18n-for-react">i18n-for-react</h1>
+				<a href="#i18n-for-react" id="i18n-for-react" style="color: inherit; text-decoration: none;">
+					<h1>i18n-for-react</h1>
+				</a>
 				<p><a href="https://npmjs.com/package/i18n-for-react"><img src="https://img.shields.io/npm/v/i18n-for-react.svg" alt="NPM version"></a>
 					<a href="https://david-dm.org/TrigenSoftware/i18n-for-react"><img src="https://david-dm.org/TrigenSoftware/i18n-for-react.svg" alt="Dependencies status"></a>
 					<a href="https://travis-ci.com/TrigenSoftware/i18n-for-react"><img src="http://img.shields.io/travis/com/TrigenSoftware/i18n-for-react/master.svg" alt="Build status"></a>
@@ -70,11 +72,15 @@
 					<a href="https://dependabot.com/"><img src="https://api.dependabot.com/badges/status?host=github&repo=TrigenSoftware/i18n-for-react" alt="Dependabot badge"></a>
 				<a href="https://trigensoftware.github.io/i18n-for-react"><img src="https://img.shields.io/badge/API-Documentation-2b7489.svg" alt="Documentation badge"></a></p>
 				<p>Modern translation module for React.</p>
-				<h2 id="install">Install</h2>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
 				<pre><code class="language-sh">npm i i18n-for-react
 <span class="hljs-comment"># or</span>
 yarn add i18n-for-react</code></pre>
-				<h2 id="api">API</h2>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
 				<p>Module exposes next API:</p>
 				<pre><code class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> globalConfig;
 <span class="hljs-keyword">export</span> {
@@ -102,7 +108,9 @@ yarn add i18n-for-react</code></pre>
 };</code></pre>
 				<p><a href="https://trigensoftware.github.io/i18n-for-react/index.html">Description of this methods you can find in Documentation.</a></p>
 				<p>Basic API is same as in <a href="https://github.com/TrigenSoftware/i18n-for-browser"><code>i18n-for-browser</code> module.</a></p>
-				<h3 id="i18nprovider"><a href="https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html">I18nProvider</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactinterfaces_provider_ii18nproviderconfightmli18nprovidera" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactinterfaces_provider_ii18nproviderconfightmli18nprovidera" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html">I18nProvider</a></h3>
+				</a>
 				<p>Configurator and provider of <code>i18n</code> instance.</p>
 				<p>Root context configuration example:</p>
 				<pre><code class="language-jsx">&lt;I18nProvider
@@ -132,7 +140,9 @@ yarn add i18n-for-react</code></pre>
         {__x`goodby`}
     &lt;/I18nProvider&gt;
 &lt;/I18nProvider&gt;</code></pre>
-				<h3 id="withi18n"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n">withI18n</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_withi18n_htmlwithi18nwithi18na" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_withi18n_htmlwithi18nwithi18na" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n">withI18n</a></h3>
+				</a>
 				<p>Decorator to configure provider of <code>i18n</code> instance.</p>
 				<p>Example:</p>
 				<pre><code class="language-jsx">@withI18n({
@@ -163,7 +173,9 @@ yarn add i18n-for-react</code></pre>
         );
     }
 }</code></pre>
-				<h3 id="rprintf-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">rprintf()</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_rptintf_htmlrptintfrprintfa" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_rptintf_htmlrptintfrprintfa" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf">rprintf()</a></h3>
+				</a>
 				<p>Every translate function support React-formatted output:</p>
 				<pre><code class="language-jsx">__x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [&lt;b/&gt;])
 // or
@@ -174,11 +186,17 @@ __x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
     &lt;b&gt;username&lt;/b&gt;,
     '!'
 ]</code></pre>
-				<h3 id="__x-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__x">__x()</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__x__xa" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__x__xa" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__x">__x()</a></h3>
+				</a>
 				<p>Same as <code>__()</code>, but for JSX.</p>
-				<h3 id="__xmf-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xmf">__xmf()</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__xmf__xmfa" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__xmf__xmfa" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xmf">__xmf()</a></h3>
+				</a>
 				<p>Same as <code>__mf()</code>, but for JSX.</p>
-				<h3 id="__xn-"><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xn">__xn()</a></h3>
+				<a href="#a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__xn__xna" id="a-hrefhttpstrigensoftwaregithubioi18n-for-reactmodules_index_html__xn__xna" style="color: inherit; text-decoration: none;">
+					<h3><a href="https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xn">__xn()</a></h3>
+				</a>
 				<p>Same as <code>__n()</code>, but for JSX.</p>
 			</div>
 		</div>
@@ -188,26 +206,23 @@ __x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_context_.html">"<wbr>Context"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_provider_.html">&quot;<wbr>Provider&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_provider_.html">"<wbr>Provider"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_translate_.html">&quot;<wbr>Translate&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_translate_.html">"<wbr>Translate"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_rptintf_.html">&quot;rptintf&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_rptintf_.html">"rptintf"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_types_.html">&quot;types&quot;</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_types_.html">"types"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_withi18n_.html">"with<wbr>I18n"</a>
+					<li class=" tsd-kind-module">
+						<a href="modules/_withi18n_.html">&quot;with<wbr>I18n&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -222,63 +237,11 @@ __x('Hi, &lt;&gt;%s&lt;/&gt;!', 'username', [_ =&gt; &lt;b&gt;{_}&lt;/b&gt;])
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
