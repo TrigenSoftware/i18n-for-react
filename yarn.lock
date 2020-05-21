@@ -1001,7 +1001,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.4.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.8.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.7.tgz#8fefce9802db54881ba59f90bb28719b4996324d"
   integrity sha512-+AATMUFppJDw6aiR5NVPHqIQBlV/Pj8wY/EZH+lmvRdUo9xBaz/rF3alAwFJQavvKfeOlPE7oaaDHVbcySbCsg==
@@ -1612,10 +1612,10 @@
   resolved "https://registry.yarnpkg.com/@types/mustache/-/mustache-4.0.1.tgz#e4d421ed2d06d463b120621774185a5cd1b92d77"
   integrity sha512-wH6Tu9mbiOt0n5EvdoWy0VGQaJMHfLIxY/6wS0xLC7CV1taM6gESEzcYy0ZlWvxxiiljYvfDIvz4hHbUUDRlhw==
 
-"@types/node@*", "@types/node@^13.9.1":
-  version "13.9.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.1.tgz#96f606f8cd67fb018847d9b61e93997dabdefc72"
-  integrity sha512-E6M6N0blf/jiZx8Q3nb0vNaswQeEyn0XlupO+xN6DtJ6r6IT4nXrTry7zhIfYvFCl3/8Cu6WIysmUBKiqV0bqQ==
+"@types/node@*", "@types/node@^14.0.5":
+  version "14.0.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.5.tgz#3d03acd3b3414cf67faf999aed11682ed121f22b"
+  integrity sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -3187,7 +3187,7 @@ core-js-pure@^3.0.0:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.4.tgz#4bf1ba866e25814f149d4e9aaa08c36173506e3a"
   integrity sha512-epIhRLkXdgv32xIUFaaAry2wdxZYBi6bgM7cB136dzzXXa+dFyRLTZeLUJxnd8ShrmyVXBub63n2NHo2JAt8Cw==
 
-core-js@3, core-js@^3.2.1:
+core-js@^3.2.1:
   version "3.6.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
   integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
@@ -5092,18 +5092,17 @@ husky@^4.0.9:
     which-pm-runs "^1.0.0"
 
 i18n-for-browser@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-2.0.1.tgz#dfe05e2984cc7e4edc7a15305ef22e6ec1811d68"
-  integrity sha512-0mOSMP73i8iKPD18feRatmtFyTzjO+96smiYtJNY5/najN3/Bl1fnr0FYsynyOnDJl8GnhTNSErqYFDJl6dwqA==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-2.1.1.tgz#0f5abe3402644931d3d2a0633758125475d01997"
+  integrity sha512-kRhbDxmEB9YMDI/Vv114EytCUWJYgnIfs2y0dfdTErnnOU6L8wXwaEI2XbF8MoSbxDuOsp6mIBMwQ475k40m1g==
   dependencies:
-    "@babel/runtime" "^7.4.5"
+    "@babel/runtime-corejs3" "^7.9.6"
     "@types/js-cookie" "^2.2.2"
     "@types/mustache" "^4.0.1"
-    "@types/node" "^13.9.1"
+    "@types/node" "^14.0.5"
     "@types/sprintf-js" "^1.1.2"
     assert "^2.0.0"
     cldr-core "^36.0.0"
-    core-js "3"
     js-cookie "^2.2.0"
     make-plural-compiler "^5.0.0"
     math-interval-parser "^2.0.1"
