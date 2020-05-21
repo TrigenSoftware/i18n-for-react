@@ -24,6 +24,10 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [3.1.0] - 2020-05-22
+### Changed
+- Dependencies update.
+
 ## [3.0.0] - 2020-03-18
 ### Added
 - Babel module.
