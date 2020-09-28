@@ -110,44 +110,7 @@ Fork context example:
 </I18nProvider>
 ```
 
-### [withI18n](https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n)
-
-Decorator to configure provider of `i18n` instance.
-
-Example:
-
-```jsx
-@withI18n({
-    en: {/* ... */},
-    ru: {/* ... */}
-})
-class Container extends Component {
-
-    state = {
-        locale: 'en'
-    };
-
-    render() {
-        return (
-            <I18nProvider
-                locale={this.state.locale}
-            >
-                {__x`hi`}
-                <I18nProvider
-                    locales={{
-                        en: {/* ... */},
-                        ru: {/* ... */}
-                    }}
-                >
-                    {__x`goodby`}
-                </I18nProvider>
-            </I18nProvider>
-        );
-    }
-}
-```
-
-### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
+### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rprintf_.html#rprintf)
 
 Every translate function support React-formatted output:
 

@@ -4,15 +4,31 @@ import React, {
 	cloneElement
 } from 'react';
 
-type Part = string|ReactElement;
-type Parts = Part|Part[];
+type Part = string | ReactElement;
+type Parts = Part | Part[];
 type WrapperFn = (children: Parts) => Parts;
-type Wrapper = ReactElement|WrapperFn;
+type Wrapper = ReactElement | WrapperFn;
 
 export const tagRegExp = /<>/;
 
-export default function rptintf(text: string, wrappers: Wrapper[] = [], startwrapperIndexPointerPointer = { v: 0 }) {
+/**
+ * Format string with React-elements.
+ * @param text - Text to format.
+ * @param wrappers - Wrappers to paste.
+ * @returns Formated text.
+ */
+export function rprintf(
+	text: string,
+	wrappers: Wrapper[] = []
+) {
+	return print(text, wrappers);
+}
 
+function print(
+	text: string,
+	wrappers: Wrapper[] = [],
+	startwrapperIndexPointerPointer = { v: 0 }
+) {
 	const wrapperIndexPointer = startwrapperIndexPointerPointer;
 	const len = text.length;
 	let wrapperIndex = 0;
@@ -23,7 +39,6 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 	let result: Parts = '';
 
 	for (let i = 0; i < len; i++) {
-
 		char = text[i];
 
 		if (char === '\n') {
@@ -34,7 +49,6 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 		}
 
 		if (char === '<' && text[i + 1] === '>') {
-
 			balance++;
 
 			if (balance === 1) {
@@ -46,16 +60,14 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 		}
 
 		if (char === '<' && text[i + 1] === '/' && text[i + 2] === '>') {
-
 			balance--;
 
 			if (balance === 0) {
-
 				i += 2;
 
 				wrapperIndex = wrapperIndexPointer.v++;
 				parts = tagRegExp.test(part)
-					? rptintf(part, wrappers, wrapperIndexPointer)
+					? print(part, wrappers, wrapperIndexPointer)
 					: part;
 				result = add(
 					result,
@@ -80,7 +92,6 @@ export default function rptintf(text: string, wrappers: Wrapper[] = [], startwra
 }
 
 function add(parts: Parts, add: Parts): Parts {
-
 	if (!parts) {
 		return add;
 	}
@@ -100,7 +111,6 @@ function add(parts: Parts, add: Parts): Parts {
 }
 
 function applyWrapper(children: Parts, wrappers: Wrapper[], index: number) {
-
 	if (index >= wrappers.length) {
 		return children;
 	}
