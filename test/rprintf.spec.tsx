@@ -1,31 +1,27 @@
 // tslint:disable jsx-key
 import React from 'react';
-import rptintf from '../src/rptintf';
+import { rprintf } from '../src/rprintf';
 
-describe('rptintf', () => {
-
+describe('rprintf', () => {
 	it('should remove tags', () => {
-
 		expect(
-			rptintf('Start <>bold</>')
+			rprintf('Start <>bold</>')
 		).toBe(
 			'Start bold'
 		);
 	});
 
 	it('should wrap by functions', () => {
-
 		expect(
-			rptintf('Start <>bold</>', [_ => `[B]${_}[/B]`])
+			rprintf('Start <>bold</>', [_ => `[B]${_}[/B]`])
 		).toBe(
 			'Start [B]bold[/B]'
 		);
 	});
 
 	it('should wrap by jsx', () => {
-
 		expect(
-			rptintf('Start <>bold</>', [<b/>])
+			rprintf('Start <>bold</>', [<b/>])
 		).toMatchObject([
 			'Start ',
 			{
@@ -37,7 +33,7 @@ describe('rptintf', () => {
 		]);
 
 		expect(
-			rptintf('Start <>bold</>!', [<b/>])
+			rprintf('Start <>bold</>!', [<b/>])
 		).toMatchObject([
 			'Start ',
 			{
@@ -51,9 +47,8 @@ describe('rptintf', () => {
 	});
 
 	it('should handle nl', () => {
-
 		expect(
-			rptintf('one\ntwo')
+			rprintf('one\ntwo')
 		).toMatchObject([
 			'one',
 			{
@@ -64,9 +59,8 @@ describe('rptintf', () => {
 	});
 
 	it('should wrap some text', () => {
-
 		expect(
-			rptintf('Start <>bold</> middle <>italic</>', [
+			rprintf('Start <>bold</> middle <>italic</>', [
 				<b/>,
 				_ => <i>{_}</i>
 			])
@@ -89,9 +83,8 @@ describe('rptintf', () => {
 	});
 
 	it('should wrap inside', () => {
-
 		expect(
-			rptintf('Start <>bold <>italic</></>', [<b/>, <i/>])
+			rprintf('Start <>bold <>italic</></>', [<b/>, <i/>])
 		).toMatchObject([
 			'Start ',
 			{
@@ -111,7 +104,7 @@ describe('rptintf', () => {
 		]);
 
 		expect(
-			rptintf('Start <>bold <>italic</></> <>link</>', [<b/>, <i/>, <a/>])
+			rprintf('Start <>bold <>italic</></> <>link</>', [<b/>, <i/>, <a/>])
 		).toMatchObject([
 			'Start ',
 			{

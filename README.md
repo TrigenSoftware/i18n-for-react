@@ -40,26 +40,15 @@ yarn add i18n-for-react
 Module exposes next API:
 
 ```js
-export default globalConfig;
+// all i18n-for-browser exports, plus:
 export {
-    IConfig,
-    ILocales,
-    IFallbacks,
-    IUnknownPhraseListener,
-    IProcessor,
-    IParams,
-    IPluralParams,
-    pluralIntervalProcessor,
-    mustacheProcessor,
-    I18nContext,
-    I18nProvider,
-    II18nProviderConfig,
-    withI18n,
+    I18nMethods,
+    I18nProviderConfig,
+    I18nProviderProps,
+    I18nContextPayload,
     rprintf,
-    __,
-    __mf,
-    __n,
-    __m,
+    createI18nProvider,
+    createI18nHook
     __x,
     __xmf,
     __xn
@@ -70,13 +59,83 @@ export {
 
 Basic API is same as in [`i18n-for-browser` module.](https://github.com/TrigenSoftware/i18n-for-browser)
 
+### [createI18nProvider](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
+
+Create `I18nContext` and `I18nProvider` with given methods.
+
+<details>
+    <summary>Usage example</summary>
+
+```js
+/**
+ * Basic example 
+ */
+const {
+    /**
+     * Config and methods provider.
+     */
+    I18nProvider,
+    /**
+     * Context with config and methods.
+     */
+    I18nContext
+} = createI18nProvider(
+    /**
+     * Methods for binding and providing.
+     */
+    {
+        __,
+        __x
+    },
+    /**
+     * Config defaults.
+     */
+    {
+        /* ... */
+        cookieName: 'yourcookiename'
+    }
+);
+```
+
+</details>
+
+### [createI18nHook](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
+
+Create hook from context.
+
+<details>
+    <summary>Usage example</summary>
+
+```js
+/**
+ * Basic example 
+ */
+const useI18n = createI18nHook(I18nContext);
+/**
+ * Then you can use this hook
+ */
+function SomeComponent() {
+    const {
+        __
+    } = useI18n();
+
+    return __`cat`;
+}
+```
+
+</details>
+
 ### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
 
 Configurator and provider of `i18n` instance.
 
-Root context configuration example:
+<details>
+    <summary>Usage example</summary>
 
 ```jsx
+/**
+ * Root context configuration
+ */
 <I18nProvider
     locale='en'
     locales={{
@@ -84,13 +143,11 @@ Root context configuration example:
         ru: {/* ... */}
     }}
 >
-    {__x`hi`}
+    {/* ... */}
 </I18nProvider>
-```
-
-Fork context example:
-
-```jsx
+/**
+ * Fork context
+ */
 <I18nProvider
     locale='en'
     locales={{
@@ -98,79 +155,96 @@ Fork context example:
         ru: {/* ... */}
     }}
 >
-    {__x`hi`}
+    {/* ... */}
     <I18nProvider
         locales={{
             en: {/* ... */},
             ru: {/* ... */}
         }}
     >
-        {__x`goodby`}
+        {/* ... */}
     </I18nProvider>
 </I18nProvider>
 ```
 
-### [withI18n](https://trigensoftware.github.io/i18n-for-react/modules/_withi18n_.html#withi18n)
+</details>
 
-Decorator to configure provider of `i18n` instance.
+### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rprintf_.html#rprintf)
 
-Example:
+Format string with wrappers.
 
-```jsx
-@withI18n({
-    en: {/* ... */},
-    ru: {/* ... */}
-})
-class Container extends Component {
-
-    state = {
-        locale: 'en'
-    };
-
-    render() {
-        return (
-            <I18nProvider
-                locale={this.state.locale}
-            >
-                {__x`hi`}
-                <I18nProvider
-                    locales={{
-                        en: {/* ... */},
-                        ru: {/* ... */}
-                    }}
-                >
-                    {__x`goodby`}
-                </I18nProvider>
-            </I18nProvider>
-        );
-    }
-}
-```
-
-### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rptintf_.html#rptintf)
-
-Every translate function support React-formatted output:
+<details>
+    <summary>Usage example</summary>
 
 ```jsx
-__x('Hi, <>%s</>!', 'username', [<b/>])
-// or
-__x('Hi, <>%s</>!', 'username', [_ => <b>{_}</b>])
-// will produce:
-[
-    'Hi, ',
-    <b>username</b>,
-    '!'
-]
+/**
+ * Wrap with React-elements
+ */
+rprintf('Hi, <>John</>!', [<b/>])
+/**
+ * or handle with functions
+ */
+rprintf('Hi, <>John</>!', [_ => `<b>${_}</b>`])
 ```
+
+</details>
 
 ### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__x)
 
 Same as `__()`, but for JSX.
 
+<details>
+    <summary>Usage example</summary>
+
+```jsx
+/**
+ * Same as `__()`
+ */
+__x('Hi, %s!', 'John')
+/**
+ * And with wrappers
+ */
+__x('Hi, <>%s</>!', 'John', [<b/>])
+```
+
+</details>
+
 ### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xmf)
 
 Same as `__mf()`, but for JSX.
 
+<details>
+    <summary>Usage example</summary>
+
+```jsx
+/**
+ * Same as `__mf()`
+ */
+__xmf('Hi, {username}!', { username: 'John' })
+/**
+ * And with wrappers
+ */
+__xmf('Hi, <>{username}</>!', { username: 'John' }, [<b/>])
+```
+
+</details>
+
 ### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xn)
 
 Same as `__n()`, but for JSX.
+
+<details>
+    <summary>Usage example</summary>
+
+```jsx
+/**
+ * Same as `__xn()`
+ */
+__xn('I have %s cats.', 2)
+/**
+ * And with wrappers
+ */
+__xn('I have <>%s</> cats.', 2, [<b/>])
+```
+
+</details>

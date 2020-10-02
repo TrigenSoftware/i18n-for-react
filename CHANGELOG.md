@@ -24,6 +24,10 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [4.0.0] - 2020-10-02
+### Changed
+- Moved from component API to hooks.
+
 ## [3.1.0] - 2020-05-22
 ### Changed
 - Dependencies update.
