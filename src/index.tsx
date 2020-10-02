@@ -6,9 +6,9 @@ import {
 	rprintf
 } from './rprintf';
 import {
-	I18nConfig,
-	IPluralParams,
-	IParams,
+	I18nConfigInstance,
+	I18nPluralParams,
+	I18nParams,
 	__,
 	__mf,
 	__n
@@ -24,7 +24,7 @@ function callI18nMethod<
 	TMethod extends (...args: any[]) => any
 >(
 	method: TMethod,
-	config: I18nConfig,
+	config: I18nConfigInstance,
 	args: any[]
 ) {
 	const argsLength = args.length;
@@ -54,7 +54,7 @@ function callI18nMethod<
  * @param values - Values to print.
  * @returns Translated parsed and substituted string.
  */
-export function __x(phraseOrParams: string | TemplateStringsArray | IParams, ...values): ReactElement;
+export function __x(phraseOrParams: string | TemplateStringsArray | I18nParams, ...values): ReactElement;
 
 export function __x(...args) {
 	return callI18nMethod(__, this, args);
@@ -70,7 +70,7 @@ export function __x(...args) {
  * @param values - Values to print.
  * @returns Translate.
  */
-export function __xmf(phraseOrParams: string | TemplateStringsArray | IParams, ...values): ReactElement;
+export function __xmf(phraseOrParams: string | TemplateStringsArray | I18nParams, ...values): ReactElement;
 
 export function __xmf(...args) {
 	return callI18nMethod(__mf, this, args);
@@ -86,7 +86,7 @@ export function __xmf(...args) {
  * @returns Translate.
  */
 export function __xn(
-	params: IPluralParams,
+	params: I18nPluralParams,
 	count?: string | number,
 	...values
 ): ReactElement;

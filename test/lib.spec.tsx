@@ -6,7 +6,7 @@ import Enzyme, {
 	mount
 } from 'enzyme';
 import {
-	IConfig,
+	I18nConfig,
 	createI18nProvider,
 	createI18nHook,
 	__,
@@ -17,7 +17,7 @@ Enzyme.configure({
 	adapter: new Adapter()
 });
 
-const CONFIG: IConfig = {
+const CONFIG: I18nConfig = {
 	locales:       {
 		en: {
 			hi:   'Hello',

@@ -8,12 +8,12 @@ import React, {
 	memo
 } from 'react';
 import rootI18n, {
-	I18nConfig
+	I18nConfigInstance
 } from 'i18n-for-browser';
 import {
-	II18nMethods,
-	II18nProviderConfig,
-	II18nProviderProps,
+	I18nMethods,
+	I18nProviderConfig,
+	I18nProviderProps,
 	I18nContextPayload
 } from './types';
 
@@ -24,21 +24,21 @@ import {
  * @returns Provider.
  */
 export function createI18nProvider<
-	TMethods extends II18nMethods = II18nMethods
+	TMethods extends I18nMethods = I18nMethods
 >(
 	methods: TMethods,
-	config: II18nProviderConfig = {}
+	config: I18nProviderConfig = {}
 ) {
 	const methodsEntries = Object.entries(methods);
 	const I18nContext = createContext<I18nContextPayload<TMethods>>(null);
 	const useI18nParentInstance = ({
 		context
-	}: II18nProviderProps) => {
+	}: I18nProviderProps) => {
 		const parentContext = useContext(I18nContext);
 
 		return context || parentContext && parentContext.config;
 	};
-	const I18nProvider = memo((props: II18nProviderProps) => {
+	const I18nProvider = memo((props: I18nProviderProps) => {
 		const {
 			children
 		} = props;
@@ -68,11 +68,11 @@ export function createI18nProvider<
  * @param context - I18n context.
  * @returns Hook function.
  */
-export function createI18nHook<T extends II18nMethods>(context: Context<I18nContextPayload<T>>) {
+export function createI18nHook<T extends I18nMethods>(context: Context<I18nContextPayload<T>>) {
 	return () => useContext(context);
 }
 
-function useI18nInstance(props: II18nProviderProps, i18nParentInstance: I18nConfig) {
+function useI18nInstance(props: I18nProviderProps, i18nParentInstance: I18nConfigInstance) {
 	const {
 		locale,
 		locales,
@@ -123,8 +123,8 @@ function createI18nInstance(
 		context,
 		children,
 		...config
-	}: II18nProviderProps,
-	i18nParentInstance: I18nConfig
+	}: I18nProviderProps,
+	i18nParentInstance: I18nConfigInstance
 ) {
 	const configWithLocale = typeof locale === 'string'
 		? {
@@ -132,23 +132,23 @@ function createI18nInstance(
 			defaultLocale: locale
 		}
 		: config;
-	const i18n: I18nConfig = i18nParentInstance
+	const i18n: I18nConfigInstance = i18nParentInstance
 		? i18nParentInstance.fork(configWithLocale, hardfork as any)
 		: rootI18n.configure(configWithLocale);
 
 	return i18n;
 }
 
-function destroyI18nInstance(i18n: I18nConfig) {
+function destroyI18nInstance(i18n: I18nConfigInstance) {
 	if (i18n && i18n !== rootI18n) {
 		i18n.destroy();
 	}
 }
 
 function createPayload<
-	TMethods extends II18nMethods
+	TMethods extends I18nMethods
 >(
-	config: I18nConfig,
+	config: I18nConfigInstance,
 	methodsEntries: [string, () => any][]
 ) {
 	return methodsEntries.reduce(

@@ -2,8 +2,8 @@ import {
 	ReactNode
 } from 'react';
 import {
-	I18nConfig,
-	IConfig
+	I18nConfigInstance,
+	I18nConfig
 } from 'i18n-for-browser';
 import {
 	__,
@@ -15,7 +15,7 @@ import {
 	__xn
 } from '.';
 
-export interface II18nMethods {
+export interface I18nMethods {
 	__?: typeof __;
 	__mf?: typeof __mf;
 	__n?: typeof __n;
@@ -25,16 +25,16 @@ export interface II18nMethods {
 	__xn?: typeof __xn;
 }
 
-export interface II18nProviderConfig extends IConfig {
+export interface I18nProviderConfig extends I18nConfig {
 	locale?: string;
 }
 
-export interface II18nProviderProps extends II18nProviderConfig {
-	context?: I18nConfig;
+export interface I18nProviderProps extends I18nProviderConfig {
+	context?: I18nConfigInstance;
 	hardfork?: boolean;
 	children: ReactNode;
 }
 
-export type I18nContextPayload<TMethods extends II18nMethods = II18nMethods> = TMethods & {
-	config: I18nConfig;
+export type I18nContextPayload<TMethods extends I18nMethods = I18nMethods> = TMethods & {
+	config: I18nConfigInstance;
 };
