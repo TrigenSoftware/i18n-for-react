@@ -59,7 +59,7 @@ export {
 
 Basic API is same as in [`i18n-for-browser` module.](https://github.com/TrigenSoftware/i18n-for-browser)
 
-### [createI18nProvider](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
+### [createI18nProvider](https://trigensoftware.github.io/i18n-for-react/modules/_src_createi18nprovider_.html#createi18nprovider)
 
 Create `I18nContext` and `I18nProvider` with given methods.
 
@@ -99,7 +99,7 @@ const {
 
 </details>
 
-### [createI18nHook](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
+### [createI18nHook](https://trigensoftware.github.io/i18n-for-react/modules/_src_createi18nprovider_.html#createi18nhook)
 
 Create hook from context.
 
@@ -125,7 +125,7 @@ function SomeComponent() {
 
 </details>
 
-### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/interfaces/_provider_.ii18nproviderconfig.html)
+### [I18nProvider](https://trigensoftware.github.io/i18n-for-react/modules/_src_createi18nprovider_.html#createi18nprovider)
 
 Configurator and provider of `i18n` instance.
 
@@ -169,7 +169,7 @@ Configurator and provider of `i18n` instance.
 
 </details>
 
-### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_rprintf_.html#rprintf)
+### [rprintf()](https://trigensoftware.github.io/i18n-for-react/modules/_src_rprintf_.html#rprintf)
 
 Format string with wrappers.
 
@@ -189,7 +189,7 @@ rprintf('Hi, <>John</>!', [_ => `<b>${_}</b>`])
 
 </details>
 
-### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__x)
+### [__x()](https://trigensoftware.github.io/i18n-for-react/modules/_src_index_.html#__x)
 
 Same as `__()`, but for JSX.
 
@@ -209,7 +209,7 @@ __x('Hi, <>%s</>!', 'John', [<b/>])
 
 </details>
 
-### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xmf)
+### [__xmf()](https://trigensoftware.github.io/i18n-for-react/modules/_src_index_.html#__xmf)
 
 Same as `__mf()`, but for JSX.
 
@@ -229,7 +229,7 @@ __xmf('Hi, <>{username}</>!', { username: 'John' }, [<b/>])
 
 </details>
 
-### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_index_.html#__xn)
+### [__xn()](https://trigensoftware.github.io/i18n-for-react/modules/_src_index_.html#__xn)
 
 Same as `__n()`, but for JSX.
 
