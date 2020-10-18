@@ -28,7 +28,7 @@ DO NOT TOUCH. SAVE IT ON TOP.
 ### Added
 - `useI18n` hook as part of `createI18nProvider` result.
 
-## Removed
+### Removed
 - `createI18nHook` method.
 
 ## [4.0.0] - 2020-10-02
