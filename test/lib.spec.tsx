@@ -8,7 +8,6 @@ import Enzyme, {
 import {
 	I18nConfig,
 	createI18nProvider,
-	createI18nHook,
 	__,
 	__x
 } from '../src';
@@ -33,12 +32,12 @@ const CONFIG: I18nConfig = {
 describe('i18n-for-react', () => {
 	const {
 		I18nProvider,
-		I18nContext
+		I18nContext,
+		useI18n
 	} = createI18nProvider({
 		__,
 		__x
 	}, CONFIG);
-	const useI18n = createI18nHook(I18nContext);
 
 	it('should translate phrase from global context', () => {
 		const wrapper = mount(
@@ -179,7 +178,6 @@ describe('i18n-for-react', () => {
 				</>
 			);
 		};
-
 		const wrapper = mount(
 			<I18nProvider>
 				<Text />
@@ -187,5 +185,52 @@ describe('i18n-for-react', () => {
 		);
 
 		expect(wrapper.html()).toBe('Hello');
+	});
+
+	it('should create instance by hook', () => {
+		const Text = () => {
+			const {
+				__
+			} = useI18n(CONFIG);
+
+			return (
+				<>
+					{__`hi`}
+				</>
+			);
+		};
+		const wrapper = mount(
+			<Text />
+		);
+
+		expect(wrapper.html()).toBe('Hello');
+	});
+
+	it('should fork instance by hook', () => {
+		const subconfig = {
+			locales: {
+				en: {
+					'hi': 'sup'
+				}
+			}
+		};
+		const Text = () => {
+			const {
+				__
+			} = useI18n(subconfig);
+
+			return (
+				<>
+					{__`hi`}
+				</>
+			);
+		};
+		const wrapper = mount(
+			<I18nProvider>
+				<Text />
+			</I18nProvider>
+		);
+
+		expect(wrapper.html()).toBe('sup');
 	});
 });
