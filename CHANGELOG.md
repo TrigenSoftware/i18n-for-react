@@ -24,6 +24,13 @@ DO NOT TOUCH. SAVE IT ON TOP.
 
 -->
 
+## [4.1.0] - 2020-10-18
+### Added
+- `useI18n` hook as part of `createI18nProvider` result.
+
+## Removed
+- `createI18nHook` method.
+
 ## [4.0.0] - 2020-10-02
 ### Changed
 - Moved from component API to hooks.

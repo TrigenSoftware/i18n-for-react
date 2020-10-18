@@ -1,5 +1,4 @@
 import React, {
-	Context,
 	createContext,
 	useContext,
 	useMemo,
@@ -21,7 +20,7 @@ import {
  * Create i18n provider with given methods.
  * @param methods - I18n methods.
  * @param config - Default config.
- * @returns Provider.
+ * @returns Provider, context, and hook.
  */
 export function createI18nProvider<
 	TMethods extends I18nMethods = I18nMethods
@@ -33,15 +32,12 @@ export function createI18nProvider<
 	const I18nContext = createContext<I18nContextPayload<TMethods>>(null);
 	const useI18nParentInstance = ({
 		context
-	}: I18nProviderProps) => {
+	}: Partial<I18nProviderProps>) => {
 		const parentContext = useContext(I18nContext);
 
 		return context || parentContext && parentContext.config;
 	};
-	const I18nProvider = memo((props: I18nProviderProps) => {
-		const {
-			children
-		} = props;
+	const useI18nContextPayload = (props: Partial<I18nProviderProps>) => {
 		const i18nParentInstance = useI18nParentInstance(props);
 		const instanceProps = i18nParentInstance ? props : { ...config, ...props };
 		const i18nInstance = useI18nInstance(instanceProps, i18nParentInstance);
@@ -50,29 +46,47 @@ export function createI18nProvider<
 			[i18nInstance]
 		);
 
+		return payload;
+	};
+	const I18nProvider = memo((props: I18nProviderProps) => {
+		const {
+			children
+		} = props;
+		const payload = useI18nContextPayload(props);
+
 		return (
 			<I18nContext.Provider value={payload}>
 				{children}
 			</I18nContext.Provider>
 		);
 	});
+	const useI18n = (config?: I18nProviderConfig) => {
+		const withConfigRef = useRef(Boolean(config));
+
+		if (withConfigRef.current) {
+			return useI18nContextPayload(config);
+		}
+
+		return useContext(I18nContext);
+	};
 
 	return {
+		/**
+		 * Config and methods provider.
+		 */
 		I18nProvider,
-		I18nContext
+		/**
+		 * Context with config and methods.
+		 */
+		I18nContext,
+		/**
+		 * Hook to recieve config and methods.
+		 */
+		useI18n
 	};
 }
 
-/**
- * Create i18n hook from given context.
- * @param context - I18n context.
- * @returns Hook function.
- */
-export function createI18nHook<T extends I18nMethods>(context: Context<I18nContextPayload<T>>) {
-	return () => useContext(context);
-}
-
-function useI18nInstance(props: I18nProviderProps, i18nParentInstance: I18nConfigInstance) {
+function useI18nInstance(props: Partial<I18nProviderProps>, i18nParentInstance: I18nConfigInstance) {
 	const {
 		locale,
 		locales,
@@ -123,7 +137,7 @@ function createI18nInstance(
 		context,
 		children,
 		...config
-	}: I18nProviderProps,
+	}: Partial<I18nProviderProps>,
 	i18nParentInstance: I18nConfigInstance
 ) {
 	const configWithLocale = typeof locale === 'string'

@@ -78,7 +78,11 @@ const {
     /**
      * Context with config and methods.
      */
-    I18nContext
+    I18nContext,
+    /**
+     * Hook to recieve config and methods.
+     */
+    useI18n
 } = createI18nProvider(
     /**
      * Methods for binding and providing.
@@ -95,32 +99,6 @@ const {
         cookieName: 'yourcookiename'
     }
 );
-```
-
-</details>
-
-### [createI18nHook](https://trigensoftware.github.io/i18n-for-react/modules/_src_createi18nprovider_.html#createi18nhook)
-
-Create hook from context.
-
-<details>
-    <summary>Usage example</summary>
-
-```js
-/**
- * Basic example 
- */
-const useI18n = createI18nHook(I18nContext);
-/**
- * Then you can use this hook
- */
-function SomeComponent() {
-    const {
-        __
-    } = useI18n();
-
-    return __`cat`;
-}
 ```
 
 </details>
@@ -165,6 +143,40 @@ Configurator and provider of `i18n` instance.
         {/* ... */}
     </I18nProvider>
 </I18nProvider>
+```
+
+</details>
+
+### [useI18n](https://trigensoftware.github.io/i18n-for-react/modules/_src_createi18nprovider_.html#createi18nprovider)
+
+Hook to recieve config and methods.
+
+<details>
+    <summary>Usage example</summary>
+
+```js
+/**
+ * Basic example 
+ */
+function SomeComponent() {
+    const {
+        __
+    } = useI18n();
+
+    return __`cat`;
+}
+/**
+ * Fork instance
+ */
+function SomeComponent() {
+    const {
+        __
+    } = useI18n({
+        locales: /* ... */
+    });
+
+    return __`cat`;
+}
 ```
 
 </details>
