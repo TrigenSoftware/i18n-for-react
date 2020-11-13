@@ -48,7 +48,6 @@ export {
     I18nContextPayload,
     rprintf,
     createI18nProvider,
-    createI18nHook
     __x,
     __xmf,
     __xn
