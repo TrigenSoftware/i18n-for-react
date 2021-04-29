@@ -1,0 +1,51 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "22:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: highlight.js
+    versions:
+    - 10.5.0
+    - 10.6.0
+    - 10.7.1
+  - dependency-name: "@babel/runtime-corejs3"
+    versions:
+    - 7.12.13
+    - 7.12.18
+    - 7.12.5
+    - 7.13.10
+    - 7.13.6
+    - 7.13.7
+    - 7.13.9
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.0
+    - 17.0.1
+    - 17.0.2
+    - 17.0.3
+  - dependency-name: "@size-limit/preset-small-lib"
+    versions:
+    - 4.10.0
+    - 4.10.1
+    - 4.9.1
+    - 4.9.2
+  - dependency-name: "@trigen/scripts-plugin-eslint"
+    versions:
+    - 7.0.6
+    - 7.3.3
+  - dependency-name: "@trigen/scripts-plugin-jest"
+    versions:
+    - 7.0.2
+  - dependency-name: "@trigen/scripts-plugin-rollup"
+    versions:
+    - 7.0.2
+  - dependency-name: "@trigen/scripts-plugin-babel"
+    versions:
+    - 7.0.2
+  - dependency-name: rollup-plugin-typescript2
+    versions:
+    - 0.29.0
