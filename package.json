@@ -40,7 +40,7 @@
     "hoist-non-react-statics": "^3.3.2"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^4.4.0",
+    "@size-limit/preset-small-lib": "^5.0.0",
     "@trigen/scripts": "^6.0.0",
     "@trigen/scripts-plugin-babel": "^6.1.0",
     "@trigen/scripts-plugin-eslint": "^6.0.0",
